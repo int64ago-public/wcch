@@ -39,7 +39,7 @@ let am = true;
 function reg() {
     am = !am;
     const diff = Math.abs(moment(moment().format('YYYY-MM-DD 08:00:00')).diff(moment()));
-    console.log(chalk.yellow(`[当前时间] ${moment().format('HH:mm:ss SSS')} [距离挂号] ${diff / 1000} 秒 [${am ? '上午' : '下午'}]`));
+    console.log(chalk.yellow(`[当前时间] ${moment().format('HH:mm:ss SSS')} [距离挂号] ${diff / 1000} 秒 [${am ? '上午' : '下午'}号]`));
     axios({
         url: 'https://wcchapp.cdwit120.com/Order/CreateOrder',
         method: 'POST',
@@ -56,7 +56,7 @@ function reg() {
         }
         setTimeout(() => {
             reg();
-        }, diff / 10);
+        }, Math.floor(diff / 10));
     })
     .catch(err => console.log(err));
 }
