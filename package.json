@@ -1,8 +1,11 @@
 {
-  "name": "wcch",
+  "name": "@hspkg/wcch",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "wcch": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
